@@ -1,0 +1,257 @@
+
+void menu_modif();
+void modif_nombre();
+void modif_apellidos();
+void modif_direc();
+void mofif_tel();
+void modif_dpi();
+void modif_genero();
+void modif_fn();
+void modif_idp();
+void modif_fi();
+void modif_fil();
+
+case 3: {
+	menu_modif();
+}
+
+
+	  void menu_modif{
+			int opmodif;
+						cout << " Que desea modificar\n" << endl;
+						cout << "  1.  Nombres" << endl;
+						cout << "  2.  Apellidos" << endl;
+						cout << "  3.  Direccion" << endl;
+						cout << "  4.  Telefono" << endl;
+						cout << "  5.  Dpi" << endl;
+						cout << "  6.  Genero" << endl;
+						cout << "  7. Fecha de nacimiento" << endl;
+						cout << "  8. Id del puesto" << endl;
+						cout << "  9. Fecha de inicio de labores" << endl;
+						cout << " 10.  Fecha de ingreso" << endl;
+						cout << " ingrese la opcion: ";
+						cin >> opmodif;
+						system("cls");
+						switch (opmodif) {
+
+						case 1: {	modif_nombre();
+							//return menu_modif(); 
+						}
+
+						case 2: {	modif_apellidos(); 
+							//return menu_modif(); 
+						}
+
+						case 3: {	modif_direc(); 
+							//return menu_modif(); 
+						}
+
+						case 4: {	mofif_tel(); 
+							//return menu_modif(); 
+						}
+
+						case 5: {	modif_dpi(); 
+							//return menu_modif(); 
+						}
+
+						case 6: {	modif_genero(); 
+							//return menu_modif(); 
+						}
+
+						case 7: {	modif_fn();
+							//return menu_modif(); 
+						}
+
+						case 8: {	modif_idp(); 
+							//return menu_modif();
+						}
+
+						case 9: {	modif_fil(); 
+							//return menu_modif();
+						}
+
+						case 10: {	modif_fi(); 
+							//return menu_modif();
+						}
+
+
+		  }
+	  }
+}
+
+void modif_nombre{
+
+				string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese nombres modificados: " << endl;
+				getline(cin, nombres);
+				cin.ignore();
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificarnombre();
+				e.leer();
+
+				//return menu_modif();
+				system("cls");
+
+}
+
+void modif_apellidos{
+
+				string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese apellidos modificados: " << endl;
+				getline(cin, apellidos);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificarapellidos();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+
+
+}
+
+void modif_direc{
+
+				string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese direccion modificada: " << endl;
+				getline(cin, direccion);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificardireccion();
+				e.leer();
+				//return menu_modif();
+				system("cls"); 
+}
+
+void mofif_tel{
+	string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificartelefono();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+}
+
+void modif_dpi{
+
+	string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese dpi: " << endl;
+				getline(cin, DPI);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificardpi();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+}
+
+void modif_genero {
+	string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese genero: " << endl;
+				getline(cin, genero);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificargenero();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+}
+
+void modif_fn{
+	string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese fecha de nacimiento modificada: " << endl;
+				getline(cin, fecha_nacimiento);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificarfechanacimiento();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+}
+
+void modif_idp{
+string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese id puesto modificado: " << endl;
+				getline(cin, id_puesto);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificaridpuesto();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+}
+
+void modif_fil{
+	string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese fecha de inicio de labores modificada: " << endl;
+				getline(cin, fecha_inicio_labores);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificarfechainiciolabores();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+}
+
+void modif_fi{
+				string nombres, apellidos, direccion, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso;
+				int telefono;
+				cout << " ingrese fecha de ingreso modificada: " << endl;
+				getline(cin, fecha_ingreso);
+				cout << " ingrese telefono modificado : " << endl;
+				cin >> telefono;
+				cin.ignore();
+				empleados e = empleados(nombres, apellidos, direccion, telefono, DPI, genero, fecha_nacimiento, id_puesto, fecha_inicio_labores, fecha_ingreso);
+				e.leer();
+				system("cls");
+				e.modificarfechaingreso();
+				e.leer();
+				//return menu_modif();
+				system("cls");
+}

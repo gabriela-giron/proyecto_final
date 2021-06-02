@@ -1,0 +1,147 @@
+void menu_ventas() {
+	venta v = venta();
+	ventas_detalle vd = ventas_detalle();
+	
+	int opcion;
+	int res;
+
+	cout << "-------------- Menu Ventas: ----------------" << endl;
+	cout << " 1. crear....." << endl;
+	cout << " 2. leer....." << endl;
+	cout << " 3. modificar..." << endl;
+	cout << " 4. eliminar..." << endl;
+	cout << " 0. Menu Principal" << endl;
+	cout << " Seleccione su opcion: ";
+
+	cin >> opcion;
+	system("cls");
+	switch (opcion) {
+	case 1: {
+		venta v = venta();
+		ventas_detalle vd = ventas_detalle();
+		cout << " para ingresar......." << endl;
+		int variable = 0;
+		string cantidad, precio_uni, serie, fecha_factura, fecha_ingreso, consulta;
+		string id_Ventas;
+		int no_factura=0;
+		int id_Clientes;
+		int id_Empleados;
+		int id_Producto;
+
+		if (no_factura == 100) {
+			no_factura = 0;
+			variable++;
+		}
+		cin.ignore();
+		no_factura++;
+		cin.ignore();
+		cout << " numero de factura: " << endl;
+		cout << no_factura;
+		cin.ignore();
+		cout << " ingrese serie: " << endl;
+		serie = cadena[variable];
+		cout << serie;
+		cin.ignore();
+		Cliente c = Cliente();
+		c.leer();
+		cout << " ingrese id de cliente :" << endl;
+		cin >> id_Clientes;
+		cin.ignore();
+		empleados e = empleados();
+		e.leer();
+		cout << " ingrese id de empleado : " << endl;
+		cin >> id_Empleados;
+		cin.ignore();
+		Productos pr = Productos();
+		v = venta();
+		pr.leer();
+		cout << " ingrese id del producto : " << endl;
+		cin >> id_Producto;
+		cin.ignore();
+		v.crearVentas();
+		do {
+			
+			cout << " Detalles.......\n" << endl;
+
+			cout << " ingrese cantidad : " << endl;
+			cin >> cantidad;
+			cin.ignore();
+			cout << " ingrese precio unitario: " << endl;
+			cin >> precio_uni;
+			cin.ignore();
+
+			cout << " Desesa ingresar nuevamente? [s/n]" << endl;
+			cin >> res;
+			} while (res == 's');
+
+		id_Ventas = v.asignar(no_factura);
+		vd = ventas_detalle();
+
+			vd.crearVentaDetalle();
+
+		system("pause");
+		system("cls");
+		break;
+	}
+	case 2: {
+	venta v = venta();
+	ventas_detalle vd = ventas_detalle();
+		v.leerVentas();
+		vd.leerVentaDetalle();
+		system("pause");
+		system("cls");
+		break;
+	}
+	case 3: {
+		cout << " para modificar......." << endl;
+		string cantidad, precio_uni, serie, fecha_factura, fecha_ingreso;
+		int no_factura;
+		int id_Clientes;
+		int id_Empleados;
+		
+		int id_Producto;
+		cout << " ingrese numero de factura: " << endl;
+		cin >> no_factura;
+		cout << " ingrese serie: " << endl;
+		cin >> serie;
+		cout << " ingrese fecha de factura: " << endl;
+		cin >> fecha_factura;
+		cout << " ingrese id de cliente :" << endl;
+		cin >> id_Clientes;
+		cout << " ingrese id de empleado : " << endl;
+		cin >> id_Empleados;
+		cout << " ingrese fecha ingreso : " << endl;
+		cin >> fecha_ingreso;
+		cout << " ingrese id del producto : " << endl;
+		cin >> id_Producto;
+		cin.ignore();
+		cout << " ingrese cantidad : " << endl;
+		cin >> cantidad;
+		cin.ignore();
+		cout << " ingrese precio unitario: " << endl;
+		cin >> precio_uni;
+		cin.ignore();
+
+	break;
+	}
+	case 4: {
+		venta v = venta();
+		ventas_detalle vd = ventas_detalle();
+
+		v.eliminar();
+		vd.eliminarDetalle();
+		vd.eliminarDetalleT();
+		system("pause");
+		system("cls");
+		break;
+
+	}
+	case 0: {
+		menu_principal();
+		system("pause>nul");
+		break;
+
+	}
+
+	}
+}

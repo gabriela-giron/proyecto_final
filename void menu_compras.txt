@@ -1,0 +1,126 @@
+void menu_compras() {
+	Compras c = Compras();
+	Compra_Detalle cd = Compra_Detalle();
+	Productos pr = Productos();
+	int opcion;
+	int res;
+
+	cout << "-------------- Menu Compra: ----------------" << endl;
+	cout << " 1. crear....." << endl;
+	cout << " 2. leer....." << endl;
+	cout << " 3. modificar..." << endl;
+	cout << " 4. eliminar..." << endl;
+	cout << " 0. Menu Principal" << endl;
+	cout << " Seleccione su opcion: ";
+	cin >> opcion;
+	system("cls");
+	switch (opcion) {
+	case 1: {
+		Compras c = Compras();
+		Compra_Detalle cd = Compra_Detalle();
+		Productos pr = Productos();
+		proveedores pro = proveedores();
+		cout << " para ingresar......." << endl;
+		int variable = 0;
+		string fecha_orden, fecha_ingreso, cantidad, precio_costo_u, id_Compras;
+		int no_orden_compra = 0;
+		int id_proveedor = 0;
+		int id_Producto = 0;
+
+		if (no_orden_compra == 100) {
+			no_orden_compra = 0;
+			variable++;
+		}
+		cin.ignore();
+		no_orden_compra++;
+		cin.ignore();
+		cout << " numero de orden de compra: " << endl;
+		cout << no_orden_compra;
+		cout << " ingrese id de proveedor : " << endl;
+		cin >> id_proveedor;
+		cout << " ingrese fecha orden : " << endl;
+		cin >> fecha_ingreso;
+		c.leerCompras();
+		cout << " ingrese fecha ingreso : " << endl;
+		cin >> fecha_ingreso;
+		c.leerCompras();
+		cin.ignore();
+		c.crearCompras();
+
+		do {
+
+			cout << " Detalles.......\n" << endl;
+
+			cout << " ingrese cantidad : " << endl;
+			cin >> cantidad;
+			cin.ignore();
+			cout << " ingrese precio costo unitario:  " << endl;
+			cin >> precio_costo_u;
+			cin.ignore();
+
+			cout << " Desesa ingresar nuevamente? [s/n]" << endl;
+			cin >> res;
+		} while (res == 's');
+
+		id_Compras = c.asignar(no_orden_compra);
+		cd = Compra_Detalle();
+		cd.crearComprasDetalle();
+		
+
+		system("pause");
+		system("cls");
+		break;
+	}
+	case 2: {
+		Compras c = Compras();
+		Compra_Detalle cd = Compra_Detalle();
+		c.leerCompras();
+		cd.leerComprasDetalle();
+		system("pause");
+		system("cls");
+		break;
+	}
+	case 3: {
+		cout << " para modificar......." << endl;
+		string fecha_orden, fecha_ingreso, cantidad, precio_costo_u, id_Compras;
+		int no_orden_compra = 0;
+		int id_proveedor = 0;
+		int id_Producto = 0;
+
+		cout << " ingrese numero de orden de compra: " << endl;
+		cin >> no_orden_compra;
+		cout << " ingrese Fecha orden: " << endl;
+		cin >> fecha_orden;
+		cout << " ingrese fecha ingreso: " << endl;
+		cin >> fecha_ingreso;
+		cout << " ingrese cantidad :" << endl;
+		cin >> cantidad;
+		cout << " ingrese precio costo unitario : " << endl;
+		cin >> precio_costo_u;
+		cout << " ingrese id Proveedor : " << endl;
+		cin >> id_proveedor;
+		cout << " ingrese id del producto : " << endl;
+		cin >> id_Producto;
+		cin.ignore();
+		break;
+	}
+	case 4: {
+		Compras c = Compras();
+		Compra_Detalle cd = Compra_Detalle();
+		c.eliminar();
+		cd.eliminarComprasDetalle();
+		cd.eliminarT();
+		system("pause");
+		system("cls");
+		break;
+
+	}
+	case 0: {
+		menu_principal();
+		system("pause>nul");
+		break;
+
+	}
+
+	}
+}
